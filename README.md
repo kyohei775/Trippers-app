@@ -12,7 +12,7 @@
 
 
 ## テーマを選んだ理由
-* 旅行が好きで、日本の観光情報を共有して、今後の旅の参考にしたいと思ったからです。コロナ禍で気軽に旅行に行けない状況であるため、少しでも旅の気分を味わってもらったり、観光地の手助けになればいいと考えたため。
+* 旅行が好きで、日本の観光情報を共有して、今後の旅の参考にしたいと思ったからです。コロナ禍で気軽に旅行に行けない状況であるため、少しでも旅の気分を味わってもらったり、観光地の手助けになればいいと考えています。
 
 
 ## ターゲットユーザー
@@ -29,7 +29,7 @@
 
 ## 設計書
 * 機能一覧
-https://docs.google.com/spreadsheets/d/1JgUlGOLfpxthcGZhGszxfM--WIt5kIi7FEkpK4Ly2no/edit#gid=0
+(https://docs.google.com/spreadsheets/d/1JgUlGOLfpxthcGZhGszxfM--WIt5kIi7FEkpK4Ly2no/edit#gid=0)
 
 
 ## 開発環境
