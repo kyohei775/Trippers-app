@@ -22,23 +22,26 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to "log out", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
+              <%= link_to 'New post', new_post_image_path, class: 'nav-link text-dark' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'new post', new_post_image_path, class: 'nav-link text-dark' %>
+              <%= link_to 'My page', user_path(current_user.id), class: 'nav-link text-dark' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'my page', user_path(current_user.id), class: 'nav-link text-dark' %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
             </li>
             <% else %>
+            <li class="nav-item">
+              <%= link_to "Home", root_path, class: 'nav-link text-dark' %>
+            </li>
             <li class="nav-item">
               <%= link_to "About", about_path, class: 'nav-link text-dark' %>
             </li>
             <li class="nav-item">
-              <%= link_to "sign up", new_user_registration_path, class: 'nav-link text-dark' %>
+              <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-dark' %>
             </li>
             <li class="nav-item">
-              <%= link_to "log in", new_user_session_path, class: 'nav-link text-dark' %>
+              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-dark' %>
             </li>
             <% end %>
             </ul>
