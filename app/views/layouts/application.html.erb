@@ -22,7 +22,7 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to 'New post', new_post_image_path, class: 'nav-link text-dark' %>
+              <%= link_to 'All post', post_images_path, class: 'nav-link text-dark' %>
             </li>
             <li class="nav-item">
               <%= link_to 'My page', user_path(current_user.id), class: 'nav-link text-dark' %>
