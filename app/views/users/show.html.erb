@@ -2,8 +2,18 @@
   <h3 class="profile-name"><%= @user.name %></h3>
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
   <% if @user.id == current_user.id %>
-    <p><%= link_to "profile editing", edit_user_path(@user) %></p>
+    <p><%= link_to "profile editing", edit_user_path(@user), class: 'nav-link text-dark' %></p>
   <% end %>
-</div>
+  
+    <body>
+      <%= yield %>
+      <span id="back">
+        <a href="">
+          <%= image_tag asset_path('arrow.png'), data: {"turbolinks"=>false}, class: "arrow" %>
+        </a>
+      </span>
+    </body>
+  
+  </div>
 
 <%= render 'post_images/list', post_images: @post_images %>

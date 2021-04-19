@@ -1,9 +1,18 @@
 <div class="containar">
   <div class="row no-gutters">
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-      <h5 class="text-dark bg-light p-4 mb-0">All post</h5>
+      <h1 class="text-dark bg-light p-4 mb-0">All post</h1>
       <div class="button">
-          <i class="fas fa-pen"><%= link_to "new post", new_post_image_path %></i></div>
+          <i class="fas fa-pen"><%= link_to "new post", new_post_image_path, class: 'nav-link text-dark' %></i></div>
+
+          <body>
+            <%= yield %>
+            <span id="back">
+              <a href="">
+                <%= image_tag asset_path('arrow.png'), data: {"turbolinks"=>false}, class: "arrow" %>
+              </a>
+            </span>
+          </body>
 
       </div>
      </div>
