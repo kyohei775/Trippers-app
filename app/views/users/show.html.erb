@@ -1,7 +1,25 @@
 <div class="profile-container">
   <h3 class="profile-name"><%= @user.name %></h3>
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-  <% if @user.id == current_user.id %>
+  
+  <tr>
+    <th>follows</th>
+    <th><%= link_to @user.followings.count, user_followings_path(@user) %></th>
+  </tr>
+  <tr>
+    <th>followers</th>
+    <th><%= link_to @user.followers.count, user_followers_path(@user) %></th>
+  </tr>
+
+  
+  <% if current_user != @user %>
+    <% if current_user.following?(@user) %>
+      <%= link_to "フォロー外す", user_relationships_path(@user.id), method: :delete, class: "btn btn-info" %>
+    <% else %>
+      <%= link_to "フォローする", user_relationships_path(@user.id), method: :post, class: "btn btn-success" %>
+    <% end %>
+  <% else %>
+
     <p><%= link_to "profile editing", edit_user_path(@user), class: 'nav-link text-dark' %></p>
   <% end %>
   

@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all
+    @post_image = PostImage.new
+  end
+  
   def show
     @user = User.find(params[:id])
     @post_images = @user.post_images.page(params[:page]).reverse_order
