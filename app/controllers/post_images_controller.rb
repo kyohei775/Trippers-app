@@ -17,6 +17,8 @@ class PostImagesController < ApplicationController
 
   def index
     @post_images = PostImage.page(params[:page]).reverse_order
+    @q = PostImage.ransack(params[:q])
+    @post_images = @q.result(distinct: true)
   end
 
   def show
@@ -40,6 +42,15 @@ class PostImagesController < ApplicationController
     redirect_to post_images_path
   end
   
+  def set_search
+    if log_in?
+      @search_word = params[:q][:title_cont] if params[:q]
+      @q = current_user.feed.page(params[:page]).per(10).ransack(params[:q])
+      @feed_items = current_user.feed.page(params[:page]).per(10)
+      @posts = @q.result(distinct: true)
+    end
+  end
+
   # 投稿データのストロングパラメータ
   private
 

@@ -34,7 +34,7 @@
           <div class="media border mb-3">
             <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class:"bd-placeholder-img align-self-center mx-3" %>
             <div class="media-body ml-4 p-3">
-              <p><%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %></p>
+              <p><%= post_comment.created_at.strftime('%Y/%m/%d') %><%#= post_comment.comment %></p>
               <p><%= post_comment.comment %></p>
               <% if post_comment.user == current_user %>
                 <%= link_to "削除", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete, class: "btn btn-danger pull-right" %>

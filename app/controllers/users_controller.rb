@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @post_image = PostImage.new
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true)
   end
   
   def show

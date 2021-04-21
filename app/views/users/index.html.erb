@@ -1,7 +1,14 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-    
     <div class='col-md-8 offset-md-1'>
+      
+      <%= search_form_for @q do |f| %>
+        <%= f.label :name, "Keyword" %>
+        <%= f.search_field :name_cont %>
+      
+        <%= f.submit "検索" %>
+      <% end %>
+            
       <h2>Users</h2>
       <%= render 'index',users: @users %>
     </div>

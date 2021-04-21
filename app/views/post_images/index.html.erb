@@ -1,6 +1,14 @@
 <div class="containar">
   <div class="row no-gutters">
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
+      
+      <%= search_form_for @q do |f| %>
+        <%= f.label :title, "Keyword" %>
+        <%= f.search_field :title_cont %>
+      
+        <%= f.submit "検索" %>
+      <% end %>
+            
       <h1 class="text-dark bg-light p-4 mb-0">All post</h1>
       <div class="button">
           <i class="fas fa-pen"><%= link_to "new post", new_post_image_path, class: 'nav-link text-dark' %></i></div>
@@ -18,3 +26,4 @@
      </div>
     </div>
     <%= render 'post_images/list', post_images: @post_images %>
+    
