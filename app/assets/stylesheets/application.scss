@@ -18,10 +18,10 @@
  @import 'font-awesome';
 
 .image1 {
-  background-image: url(image1.jpg);
+  background-image: url(image2.jpg);
 }
 .image2 {
-  background-image: url(image2.jpg);
+  background-image: url(image1.jpg);
 }
 .image3 {
   background-image: url(image3.jpg);
@@ -47,28 +47,75 @@
   height:     50px;
 }
 
-.photo {
-	width:		100%;
-	margin:		0;
-	padding:	0;
-	position:	relative; /* 相対位置指定 */
-}
-.photo img {
-	width:		100%;
-}
-.text {
-	width:		100%;
-	font-size:	150%;
-	text-align:	center;
-	bottom:		4px;
-	margin:		0;
-	padding:	0;
-	color:		#fff;
-	background:	rgba(0,0,0,0.4); /* 帯の透明度 */
-	position:	absolute; /* 絶対位置指定 */
+// about
+.about {
+  margin: 40px 0 40px 0;
 }
 
-@keyframes slide {
-	0% { top:	0px; }
-	100% { top:	78%; }
+.about-visual-content {
+  height: 500px;
+  background-image: image-url("about1.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+.about-visual-text {
+  padding-top: 105px;
+  padding-left: 50px;
+}
+
+.about-text {
+  width: 380px;
+  margin-top: 20px;
+}
+.about-image{
+  border: 1px solid #ddd;
+  width: 380px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.about-image img{
+  width: 100%;
+  height: 300px;
+  transform: scale(1.1);
+  cursor: pointer;
+  filter: grayscale(100%);
+  transition-duration: 0.5s;
+}
+.about-image img:hover{
+  filter: grayscale(0);
+  transition-duration: 0.5s;
+}
+
+.about-text {
+  padding: 30px;
+}
+
+.about-form {
+  margin: 30px;
+  display: inline-block;
+  padding: .60em 2em;
+  border: 2px solid #333;
+  border-radius: 3em .5em 2em .5em/.4em 2em .5em 3em;
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+}
+
+/*フェードインアニメーションの指定*/
+.scrollanime {opacity: 0;} /*一瞬表示されるのを防ぐ*/
+.fadeInDown {
+  animation-name: fadeInDown;
+  animation-duration: 7s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInDown {
+  0% {
+      opacity: 0;
+  }
+  100% {
+  opacity: 1;
+  transform: translate(0);
+  }
+}
+.downup {transform: translateY(100px);}

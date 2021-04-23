@@ -53,3 +53,21 @@ $(function() {
   });
 });
 
+// aboutスライドイン
+$(function () {
+  $(window).scroll(function () {
+      // $(window).height();でブラウザの表示領域の高さを取得
+      // $(window).scrollTop();でブラウザの表示領域をスクロールした時の位置を取得
+      var wHeight = $(window).height();
+      var scrollAmount = $(window).scrollTop();
+      $('.scrollanime').each(function () {
+          // offset().top;で要素の縦の位置を取得
+          var targetPosition = $(this).offset().top;
+          // スクロール位置>対象となる要素の縦位置-表示領域の高さ+60
+          // +60で表示領域の真ん中あたりでアニメーションんが実行
+          if(scrollAmount > targetPosition - wHeight + 60) {
+              $(this).addClass("fadeInDown");
+          }
+      });
+    });
+});
