@@ -47,6 +47,17 @@
   height:     50px;
 }
 
+.top-visual-content {
+  height: 500px;
+  background-image: image-url("image6.jpg");
+  background-size: cover;
+}
+
+.top-visual-text {
+  padding-top: 200px;
+  padding-left: 80px;
+}
+
 // about
 .about {
   margin: 40px 0 40px 0;

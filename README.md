@@ -44,6 +44,6 @@
 
 
 ## 使用素材
-* ぱくたそ(https://www.pakutaso.com/) (予定)
-* O-DAN(https://o-dan.net/ja/) (予定)
-* morguefile(https://morguefile.com/photos/morguefile/1/pop) (予定)
+* ぱくたそ(https://www.pakutaso.com/)
+* O-DAN(https://o-dan.net/ja/)
+* morguefile(https://morguefile.com/photos/morguefile/1/pop)

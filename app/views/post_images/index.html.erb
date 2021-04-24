@@ -1,17 +1,30 @@
-<div class="containar">
-  <div class="row no-gutters">
-    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-      
-      <%= search_form_for @q do |f| %>
+<%= search_form_for @q do |f| %>
         <%= f.label :title, "Keyword" %>
         <%= f.search_field :title_cont %>
       
         <%= f.submit "検索" %>
       <% end %>
-            
-      <h1 class="text-dark bg-light p-4 mb-0">All post</h1>
-      <div class="button">
-          <i class="fas fa-pen"><%= link_to "new post", new_post_image_path, class: 'nav-link text-dark' %></i></div>
+
+
+<div class="container">
+  <h3 class="mt-5">All posts</h3>
+  <div class="text-right">
+    <%= link_to new_post_image_path do %>
+      <i class="fas fa-pencil-alt p-3 rounded-circle  shadow rounded bg-light" style="color: grey;"></i>
+    <% end %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
           <body>
             <%= yield %>
