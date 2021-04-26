@@ -1,0 +1,22 @@
+<div class="container">
+  <h3 class="col-12 col-sm col-md-8 mt-5">Let's post</h3>
+  <div class="text-center">
+  <!--  <%#= link_to new_post_image_path do %>-->
+  <!--    <i class="fas fa-pencil-alt p-3 rounded-circle  shadow rounded bg-light" style="color: grey;"></i>-->
+  <!--  <%# end %>-->
+  <!--</div>-->
+
+  <!--<#% if @users.count > 0 %>-->
+  <!--  <%#= render 'post_images/index', post_images: @post_images %>-->
+  <!--<#% elsif @post_images.count > 0 %>-->
+  <!--  <%#= render 'post_images/index', post_images: @post_images %>-->
+  <!--<#% else %>-->
+    <p class="mx-auto" style="width: 90%;">Share your photos!</p>
+    <p class="mx-auto" style="width: 90%;">Let's follow users!</p>
+    <p class="mx-auto" style="width: 90%;">Let's get started!!<i class="fas fa-plane fa-spin"></i></p>
+    
+    <%= link_to new_post_image_path do %>
+      <i class="fas fa-pencil-alt p-3 rounded-circle  shadow rounded bg-light" style="color: grey;"></i>
+    <% end %>
+  <%# end %>
+</div>

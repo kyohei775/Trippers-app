@@ -1,0 +1,12 @@
+<div class="d-lg-flex d-md-flex my-box-light flex-wrap mt-3">
+  <% post_images.each do |post| %>
+    <div class="my-box-post col-sm-4">
+      <%= link_to post_image_path(post_image) do %>
+      <div class="index mt-3 mb-3">
+        <%= attachment_image_tag post_image, :image, :fill, 200, 200, format: 'jpeg', fallback: "unnamed.jpg", size:'200x200' %>
+        <p><%= post_image.title %></p>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

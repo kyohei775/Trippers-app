@@ -2,10 +2,10 @@
   <div class="profile-container">
     <h3 class="profile-name"><%= @user.name %></h3>
     <%= attachment_image_tag @user, :profile_image, :fill, 250, 250, fallback: "no_image.jpg", size:'100x100', class:'rounded-circle' %><br>
-  
+    <p><%= @user.introduction %></p>
       <div class="mypage-form-follow">
     
-  
+
         <%= link_to user_followings_path(@user), class:"btn btn-light" do %>
         <%= @user.followings.count %>follows<i class="fas fa-user-friends"></i>
         <% end %>

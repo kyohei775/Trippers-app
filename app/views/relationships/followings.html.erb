@@ -1,6 +1,12 @@
-<h2>Follow Users</h2>
-<% if @users.exists? %>
-  <%= render '/users/index', users: @users %>
-<% else %>
-  <p>No users</p>
-<% end %>
+<div class="container">
+  <div class="row no-gutters">
+    <h3 class="col-12 col-sm col-md-8 mt-5">Follow users</h3>
+      <% if @users.exists? %>
+        <%= render '/users/index', users: @users %>
+      <% else %>
+    <div class="col-12">
+      <p>No users</p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -22,9 +22,17 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id)
   end
   
+  def timeline
+    @user = current_user
+    # @users = @user.following_user
+    # follows_ids = @user.following_user.pluck(:id)  # フォローしている人のIDだけを取り出す
+    # follows_ids.push(@user.id)                       # フォローしている人のID配列に自分のIDも追加
+    # @post_images = PostImage.where(user_id: follows_ids).page(params[:page]).reverse_order
+  end
+  
    private
 
   def user_params
-    params.require(:user).permit(:name, :profile_image)
+    params.require(:user).permit(:name, :profile_image, :introduction)
   end
 end

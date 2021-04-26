@@ -1,10 +1,22 @@
-<h1>Profile editing</h1>
-<%= form_with model:@user, local:true do |f| %>
-  <label for="inputName">Name</label>
-  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
-  <label for="inputImage">ProfileImage</label>
-  <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
-  
-  <%= f.submit "変更を保存" %>
-<% end %>
+<div class='container mt-5'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+        <h3>Profile editing</h3>
+          <%= form_with model:@user, local:true do |f| %>
+          <div class="form-group">
+        <label for="inputName">Name</label>
+              <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
+          </div>
+        
+        <label for="inputImage">ProfileImage</label>
+          <div class="form-group">
+              <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+          </div>
+              <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+          
+          <div class="form-group">
+        <label for="inputIntroduction">Introduction</label>
+              <%= f.text_area :introduction, class: "form-control introduction" %>
+          </div>
+              <%= f.submit "Update profile", class: 'btn btn-light' %>
+        <% end %>
