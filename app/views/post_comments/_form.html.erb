@@ -1,0 +1,4 @@
+<%= form_with(model:[@post_image, @post_comment]) do |f| %>
+    <%= f.text_area :comment, cols:'50', rows:'5', class: "input-mysize" %><br>
+    <%= f.submit "Create Comment", class: "btn btn-outline-darl comment-submit float-right" %>
+<% end %>

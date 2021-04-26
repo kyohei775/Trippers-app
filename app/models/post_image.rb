@@ -3,6 +3,7 @@ class PostImage < ApplicationRecord
   attachment :image
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  default_scope -> { order(created_at: :desc) }
   
   validates :title, presence: true
   validates :image, presence: true

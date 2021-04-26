@@ -1,42 +1,27 @@
-<%= search_form_for @q do |f| %>
-        <%= f.label :title, "Keyword" %>
-        <%= f.search_field :title_cont %>
-      
+<div class="container">
+  <h3 class="mt-10">All posts</h3>
+      <%= search_form_for @q do |f| %>
+        <%#= f.label :title, "Keyword" %>
+        <%= f.search_field :title_cont, placeholder:"Search" %>
+
         <%= f.submit "検索" %>
       <% end %>
-
-
-<div class="container">
-  <h3 class="mt-5">All posts</h3>
-  <div class="text-right">
-    <%= link_to new_post_image_path do %>
+    <div class="text-right">
+      <%= link_to new_post_image_path do %>
       <i class="fas fa-pencil-alt p-3 rounded-circle  shadow rounded bg-light" style="color: grey;"></i>
     <% end %>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <body>
-            <%= yield %>
-            <span id="back">
-              <a href="">
-                <%= image_tag asset_path('arrow.png'), data: {"turbolinks"=>false}, class: "arrow" %>
-              </a>
-            </span>
-          </body>
-
-      </div>
-     </div>
     </div>
+</div>
+
+      <body>
+          <%= yield %>
+          <span id="back">
+            <a href="">
+              <%= image_tag asset_path('arrow.png'), data: {"turbolinks"=>false}, class: "arrow" %>
+            </a>
+          </span>
+      </body>
+      </div>
+    </div>
+  </div>
     <%= render 'post_images/list', post_images: @post_images %>
-    

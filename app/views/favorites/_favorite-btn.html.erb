@@ -1,12 +1,12 @@
 <% if @post_image.favorited_by?(current_user) %>
   <span>
-    <%= link_to post_image_favorites_path(@post_image), method: :delete, remote: true do %>
+    <%= link_to post_image_favorites_path(@post_image), class:"text-dark", method: :delete, remote: true do %>
       <i class="fas fa-heart" style="color: #E03D58;"></i> <%= @post_image.favorites.count %>
     <% end %>
   </span>
 <% else %>
   <span>
-    <%= link_to post_image_favorites_path(@post_image), method: :post, remote: true do %>
+    <%= link_to post_image_favorites_path(@post_image), class:"text-dark", method: :post, remote: true do %>
       <i class="far fa-heart" style="color: #F5569C;"></i> <%= @post_image.favorites.count %>
     <% end %>
   </span>

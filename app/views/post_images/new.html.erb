@@ -1,7 +1,7 @@
 <div class="containar">
   <div class="row no-gutters">
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-      <h5 class="text-dark bg-light p-4 mb-0">new post</h5>
+      <h4 class="text-dark bg-light p-4 mb-0">new post</h4>
       <div class="form-body p-4">
         <% if @post_image.errors.any? %>
           <%= @post_image.errors.count %>件のエラーが発生しました
@@ -15,11 +15,11 @@
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-building"></i></span>
             </div>
-            <%= f.text_field :title, class:"form-control", placeholder:"title" %>
+            <%= f.text_field :title, class:"form-control", placeholder:"旅行のタイトル" %>
           </div>
-          <%= f.text_area :caption, class:"form-control", rows:"3", placeholder:"comment" %>
+          <%= f.text_area :caption, class:"form-control", rows:"3", placeholder:"旅行のおすすめポイントを紹介しよう" %>
           <hr>
-          <%= f.submit '投稿', class:"btn btn-lg btn-block btn-info mt-4" %>
+          <%= f.submit 'Create post', class:"btn btn-light btn-block btn-info mt-4" %>
         <% end %>
       </div>
     </div>

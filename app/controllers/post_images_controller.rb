@@ -16,7 +16,8 @@ class PostImagesController < ApplicationController
   end
 
   def index
-    @post_images = PostImage.page(params[:page]).reverse_order
+    @post_images = PostImage.all
+    # @post_images = PostImage.page(params[:page]).reverse_order
     @q = PostImage.ransack(params[:q])
     @post_images = @q.result(distinct: true)
   end
