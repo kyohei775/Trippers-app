@@ -17,6 +17,7 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
+// top
 .image1 {
   background-image: image-url("image2.jpg");
 }
@@ -37,6 +38,7 @@
   height: 500px;
 }
 
+// ページアップ
 #back {
   position: fixed;
   right: 20px;
@@ -47,6 +49,7 @@
   height:     50px;
 }
 
+// top
 .top-visual-content {
   height: 500px;
   background-image: image-url("image6.jpg");
@@ -137,7 +140,7 @@
     padding-bottom: 120px;/*←footerの高さ*/
     box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
 }
-
+// footer
 footer{
     width: 100%;
     background-color: #ebd6d4;
