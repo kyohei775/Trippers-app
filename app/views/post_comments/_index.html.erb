@@ -3,20 +3,20 @@
   <% if @post_image.post_comments.count > 2 %>
     <a class="more" data-toggle="collapse" href="#comment" aria-expanded="false" aria-controls="comment">more...</a>
   <% end %>
-        
+
   <% @post_image.post_comments.first(2).each do |post_comment| %>
     <% unless post_comment.id.nil? %>
     <div class="comment-container">
       <div class="comment-box">
         <div class="comment-avatar">
-          
+
           <%= attachment_image_tag post_comment.user, :profile_image, fallback: "no_image.jpg", class:"comment-image rounded-circle", size: "40x40" %>
              </div>
              <div class="comment-text">
               <p><%= link_to "by#{post_comment.user.name}", user_path(post_comment.user.id), class:"text-muted" %></p>
               <div class="comment-entry">
               <%= post_comment.comment %>
-              
+
             </div>
             <span><i class="fa fa-calendar"></i> <%= post_comment.created_at.strftime('%Y/%m/%d') %> ｜ </span>
             <% if post_comment.user == current_user %>
@@ -28,8 +28,8 @@
           </div>
           </div>
         <% end %>
-     
-      
+
+
   <!--コメント内容３件目以降-->
   <div class="collapse" id="comment">
   <% @post_image.post_comments.offset(2).each do |post_comment| %>
@@ -52,7 +52,6 @@
               <% end %>
               </div>
           </div>
-          
+
         <% end %>
       </div>
-      
