@@ -21,6 +21,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
+            <!--ユーザーがサインインしている時-->
             <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to "Let's post", user_timeline_path(current_user.id), class: 'nav-link text-dark' %>
@@ -38,6 +39,7 @@
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
             </li>
             <% else %>
+            <!--ユーザーがログアウトしている時-->
             <li class="nav-item">
               <%= link_to "HOME", root_path, data: {"turbolinks" => false}, class: 'nav-link text-dark' %>
             </li>
