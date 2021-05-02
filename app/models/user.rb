@@ -19,15 +19,15 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :follower
   # 与フォロー関係を通じて参照→自分がフォローしている人
   has_many :followings, through: :relationships, source: :followed
-  
+  # フォローする
   def follow(user_id)
     relationships.create(followed_id: user_id)
   end
-
+# フォローを外す
   def unfollow(user_id)
     relationships.find_by(followed_id: user_id).destroy
   end
-
+# 引数に渡したユーザをフォローしている（true）
   def following?(user)
     followings.include?(user)
   end
