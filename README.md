@@ -45,4 +45,3 @@
 ## 使用素材
 * ぱくたそ(https://www.pakutaso.com/)
 * O-DAN(https://o-dan.net/ja/)
-* morguefile(https://morguefile.com/)
