@@ -1,4 +1,5 @@
 class PostImagesController < ApplicationController
+  before_action :set_post_image, only: [:show, :edit, :update, :destroy]
   def new
     @post_image = PostImage.new
   end
@@ -54,6 +55,10 @@ class PostImagesController < ApplicationController
 
   # 投稿データのストロングパラメータ
   private
+  
+  def set_post_image
+    @post_image = PostImage.find(params[:id])
+  end
 
   def post_image_params
     params.require(:post_image).permit(:title, :image, :caption)
