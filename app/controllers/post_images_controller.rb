@@ -55,7 +55,7 @@ class PostImagesController < ApplicationController
 
   # 投稿データのストロングパラメータ
   private
-  
+  # 別メソッドとして定義
   def set_post_image
     @post_image = PostImage.find(params[:id])
   end
