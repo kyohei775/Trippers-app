@@ -1,4 +1,4 @@
-<!--コメント内容２件-->
+<!--コメント内容２件表示-->
 <%= @post_image.post_comments.count %> comments <i class="far fa-comments"></i>
   <% if @post_image.post_comments.count > 2 %>
     <a class="more" data-toggle="collapse" href="#comment" aria-expanded="false" aria-controls="comment">more...</a>
@@ -30,7 +30,7 @@
         <% end %>
 
 
-  <!--コメント内容３件目以降-->
+  <!--コメント内容３件目以降表示-->
   <div class="collapse" id="comment">
   <% @post_image.post_comments.offset(2).each do |post_comment| %>
     <% unless post_comment.id.nil? %>
