@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   attachment :profile_image
   default_scope -> { order(created_at: :desc) }
-  # validates :introduction, presence: false, length: { maximum: 50 } # 自己紹介の最高文字数は50文字
+  validates :introduction, presence: false, length: { maximum: 50 } # 自己紹介の最高文字数は50文字
   
   # 自分がフォローされる（被フォロー）側の関係性
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
