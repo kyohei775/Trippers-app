@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -9,7 +9,7 @@ class User < ApplicationRecord
   attachment :profile_image
   default_scope -> { order(created_at: :desc) }
   validates :introduction, presence: false, length: { maximum: 50 } # 自己紹介の最高文字数は50文字
-  
+
   # 自分がフォローされる（被フォロー）側の関係性
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   # 自分がフォローする（与フォロー）側の関係性
