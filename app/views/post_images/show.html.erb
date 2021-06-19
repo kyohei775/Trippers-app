@@ -17,8 +17,7 @@
             <p><%= link_to "by#{@post_image.user.name}", user_path(@post_image.user.id), class:"text-muted" %></p>
             <!--<span><i class="fas fa-user"></i> By <%#= @post_image.user.name %> ｜ </span>-->
             <span><i class="fa fa-calendar"></i> <%= @post_image.created_at.strftime('%Y/%m/%d') %> ｜ </span>
-            <!--<span><i class="fa fa-comment"></i> <%#= link_to "#{@post_image.post_comments.count}", post_image_path(@post_image.id), class:"text-dark" %> ｜ </span>-->
-
+            
             <span id="favorite-<%= @post_image.id %>">
               <%= render partial: "favorites/favorite-btn", locals: { post_image: @post_image } %>
             </span>
