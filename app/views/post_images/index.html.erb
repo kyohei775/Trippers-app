@@ -1,7 +1,7 @@
 <div class="container">
   <h3 class="mt-10">All posts</h3>
       <%= search_form_for @q do |f| %>
-        
+        <%#= f.label :title, "Keyword" %>
         <%= f.search_field :title_cont, placeholder:"Search" %>
 
         <%= f.submit "検索" %>
