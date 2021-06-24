@@ -30,7 +30,7 @@
         <% end %>
 
 
-  <!--コメント内容３件目以降表示-->
+  <!--コメント内容３件目以降-->
   <div class="collapse" id="comment">
   <% @post_image.post_comments.offset(2).each do |post_comment| %>
     <% unless post_comment.id.nil? %>
